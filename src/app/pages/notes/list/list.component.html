@@ -1,0 +1,19 @@
+<div class="my-5">
+    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-4 card">
+        <div class="card-header">
+            <h2 class="text-center">Add Note</h2>
+        </div>
+        <form class="mx-3" (ngSubmit)="onSave()" [formGroup]="noteForm">
+            <input type="text" formControlName="title" placeholder="title" class="form-control my-2">
+            <input type="text" formControlName="description" placeholder="Description" class="form-control my-2">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary my-2">Add</button>
+            </div>
+        </form>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6 col-lg-4" *ngFor="let note of service.notes">
+            <app-notes [note]="note" (onEdit)="onEdit($event)" (onDelete)="onDelete($event)" ></app-notes>
+        </div>
+    </div>
+</div>

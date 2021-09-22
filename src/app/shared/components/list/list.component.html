@@ -1,0 +1,8 @@
+<div class="card">
+    <h1 class="text-center card-header">{{note!.title}}</h1>
+    <p class="p-4 text-center">{{note!.description}}</p>
+    <div class="d-flex justify-content-between p-3">
+        <button class="btn btn-warning" (click)="handleEdit(note!._id!)">Edit</button>
+        <button class="btn btn-danger" (click)="handleDelete(note!)">Delete</button>
+    </div>
+</div>
